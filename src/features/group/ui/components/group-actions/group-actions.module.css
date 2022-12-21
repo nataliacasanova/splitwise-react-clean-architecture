@@ -1,0 +1,50 @@
+.group-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.search-group {
+    display: flex;
+}
+
+.search-group-input {
+    display: flex;
+    margin-right: 4px;
+}
+
+.button-action {
+    cursor: pointer;
+    margin-right: 0.25em;
+    margin-top: 0.5em;
+    padding: 0.938em;
+    border: none;
+    border-radius: 4px;
+    background-color: #22223b;
+    color: #fefefe;
+
+}
+
+.search-group-action {
+    background-color: #4a4e69;
+    color: #fefefe;
+}
+
+.add-group {
+    display: flex;
+}
+
+.add-group-modal {
+    position: absolute;
+    inset: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    max-width: 400px;
+    max-height: 250px;
+    margin: auto;
+}

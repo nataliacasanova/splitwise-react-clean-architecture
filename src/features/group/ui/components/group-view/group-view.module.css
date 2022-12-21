@@ -1,0 +1,24 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    flex-wrap: wrap;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 1vw;
+    background-color: white;
+    border-radius: 1vw;
+    margin: 24px;
+    max-width: 1200px;
+    
+}
+
+@media(min-width: 1200px){
+    .main{
+      margin: auto;
+    }
+  }
