@@ -1,11 +1,11 @@
+import { FC } from "react";
 import Card from "../../../../../shared/components/card/card";
 import { Expense } from "../domain/models/expense";
 
 
-const ExpenseComponent = ({...props}: Expense) => {
-    const {amount, title, personId} = props;
+const ExpenseComponent: FC<{expense: Expense}> = ({ expense }) => {
     return (<>
-    <Card amount={amount} title={title} personId={personId}  ></Card>
+    <Card expense={expense}></Card>
     </>)
 }
 

@@ -1,6 +1,7 @@
-import { NewExpense } from "../models/expense";
+import { Expense, NewExpense } from "../models/expense";
 
 
-export interface ExpenseRepository{
-    addExpenseCmd(idGroup: number, expense: NewExpense): void;
+export default interface ExpenseRepository {
+    addExpense(idGroup: number, expense: NewExpense): void;
+    getExpenses(groupdId: number): Promise<Expense[]>
 }

@@ -10,7 +10,7 @@ export class LocalGroupRepository implements GroupRepository {
         const groups = (await this.getAllGroupsQry()) || []  ;
         if(!this.isDuplicatedGroup(groups, name)){
             groups.push({
-                name, id: generateRandomid(), transactions: []
+                name, id: generateRandomid(), 
             });
             localStorage.setItem('groups', JSON.stringify(groups));
         }

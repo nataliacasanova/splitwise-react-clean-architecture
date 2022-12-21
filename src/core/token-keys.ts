@@ -1,4 +1,2 @@
-
-
 export const GROUP_REPOSITORY = Symbol('GROUP_REPOSITORY');
 export const EXPENSE_REPOSITORY = Symbol('EXPENSE_REPOSITORY');

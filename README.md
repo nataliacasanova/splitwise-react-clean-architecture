@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# TODO
+
+- [ ] Usar exports nombrados
+- [ ] Usar children en la card
+- [ ] Los métodos de los repositorios no tienen sufijo qry o cmd
+- [ ] Los casos usar el sufijo qry o cmd como extensión
+- [ ] Quitar summaries
+- [ ] Añadir prettier para formatear el código  

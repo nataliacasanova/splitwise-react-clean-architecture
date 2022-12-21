@@ -1,13 +1,15 @@
 
+type Id = number
 
 export interface Expense{
-    id: number;
+    id: Id;
     description: string;
     amount: string;
+    groupId: Id
     title: string;
     date: string;
-    personId: number | any;
+    personId: Id;
 }
 
-export type ExpenseSummary = Pick<Expense, 'amount' | 'personId' | 'title'>
+export type ExpenseSummary = Expense
 export type NewExpense = Omit<Expense, 'id'>;

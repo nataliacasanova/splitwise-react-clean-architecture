@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { bind } from "../../../../../core/bind";
 import { useResolve } from "../../../../../core/use-resolve";
 import { GetAllGroupsOverviewQry } from "../../../application/get-all-groups-overview";
@@ -26,9 +26,8 @@ const GroupListComponent = () => {
     return (<div className={cx('list-wrapper')}>
         {groups?.map((group: GroupSummary, index) => {
             return (
-                <>
+                
                     <GroupComponent key={index.toString()} {...group}></GroupComponent>
-                </>
             );
         })}
     </div>)
