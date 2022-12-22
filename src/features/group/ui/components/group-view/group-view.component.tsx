@@ -9,7 +9,8 @@ const cx = bind(styles);
 const GroupViewComponent = () => {
 
     return (<div className={cx('main')}>
-        <div>
+
+       <div>
             <GroupActionsComponent></GroupActionsComponent>
         </div>
         <div>

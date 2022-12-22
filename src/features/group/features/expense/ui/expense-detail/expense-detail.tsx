@@ -70,6 +70,7 @@ const ExpenseDetail = () => {
                 <Subheader title={operation} clickedIcon={goBack}/>
             </div>
             <div className={cx('body')}>
+{/*
                 <form className={cx('card')} onSubmit={handleSubmit}>
                     <p className={cx('card--title')}>{operation}</p>
                     <div className={cx('card--body')}>
@@ -141,6 +142,7 @@ const ExpenseDetail = () => {
                         <button disabled={disabled}>Guardar Gasto</button>
                     </div>
                 </form>
+*/}
             </div>
         </>
     );

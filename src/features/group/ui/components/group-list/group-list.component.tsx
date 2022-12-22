@@ -24,6 +24,7 @@ const GroupListComponent = () => {
     }, [groups]);
 
     return (<div className={cx('list-wrapper')}>
+
         {groups?.map((group: GroupSummary, index) => {
             return (
                 

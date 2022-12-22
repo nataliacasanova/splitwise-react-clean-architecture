@@ -9,7 +9,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     {/*<Route index path='/balance/:id' element={<Balance/>}/>*/}
-                    <Route index path='/' element={<GroupPage/>}/>
+                    <Route index path='/' element={<GroupPage/>}></Route>
                     <Route path='/expense-detail' element={<ExpenseDetail/>}></Route>
                 </Routes>
             </BrowserRouter>
