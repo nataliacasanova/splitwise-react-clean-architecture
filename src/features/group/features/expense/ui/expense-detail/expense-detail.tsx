@@ -1,23 +1,28 @@
 import {useState} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
+import { bind } from '../../../../../../core/bind';
 import InputComponent from '../../../../../../shared/components/input/input.component';
 import Subheader from '../../../../../../shared/components/subheader/subheader';
 import { NewExpense } from '../../domain/models/expense';
-import './card-detail.css';
 
+import styles from './expense-detail.module.css';
+
+const cx = bind(styles);
+
+const ARRAY = [
+    {id:1, name:'Natalia'}, {id:2, name: 'Lucia'}, {id:3, name: 'Pablo'}
+]
 const ExpenseDetail = () => {
     const navigate = useNavigate();
-    const location = useLocation();
-    const props = location?.state;
 
-    const [title, setTitle] = useState(props?.title || '');
-    const [amount, setAmount] = useState(props?.amount || '');
-    const [description, setDescription] = useState(props?.description || '');
-    const [date, setDate] = useState(props?.date || '');
-    const [person, setPerson] = useState(props?.person || '');
-    const [disabled] = useState(props?.disabled || false);
-    const [operation] = useState(props?.operation || 'Añadir gasto');
-    const [arrayPerson] = useState(props?.options || []);
+    const [title, setTitle] = useState('');
+    const [amount, setAmount] = useState( '');
+    const [description, setDescription] = useState( '');
+    const [date, setDate] = useState('');
+    const [person, setPerson] = useState( '');
+    const [disabled] = useState( false);
+    const [operation] = useState('Añadir gasto');
+    const [arrayPerson] = useState(ARRAY);
 
 
     const getTitle = (value: string) => {
@@ -37,15 +42,6 @@ const ExpenseDetail = () => {
     };
 
     const handleSubmit = (event: any) => {
-        event.preventDefault();
-      /*  const gasto: NewExpense = {
-            amount,
-            date,
-            title,
-            description,
-            personId,
-            gr
-        };*/
     };
 
     const goBack = () => {
@@ -57,13 +53,6 @@ const ExpenseDetail = () => {
     ));
 
     const renderSelect = () => {
-        if (person?.name) {
-            return (
-                <option className='prueba' key={person.id}>
-                    {person.name}
-                </option>
-            );
-        }
 
         if (arrayPerson?.length) {
             return (
@@ -80,11 +69,11 @@ const ExpenseDetail = () => {
             <div>
                 <Subheader title={operation} clickedIcon={goBack}/>
             </div>
-            <div className='body'>
-                <form className='card' onSubmit={handleSubmit}>
-                    <p className='card--title'>{operation}</p>
-                    <div className='card--body'>
-                        <label htmlFor='title' className='card--body-item'>
+            <div className={cx('body')}>
+                <form className={cx('card')} onSubmit={handleSubmit}>
+                    <p className={cx('card--title')}>{operation}</p>
+                    <div className={cx('card--body')}>
+                        <label htmlFor='title' className={cx('card--body-item')}>
                             Título:
                             <InputComponent
                                 type={'text'}
@@ -96,8 +85,8 @@ const ExpenseDetail = () => {
                                 disabled={disabled}
                             ></InputComponent>
                         </label>
-                        <div className='item-amount'>
-                            <label htmlFor='amount' className='card--body-item'>
+                        <div className={cx('item-amount')}>
+                            <label htmlFor='amount' className={cx('card--body-item')}>
                                 Cantidad:
                                 <InputComponent
                                     type={'text'}
@@ -110,7 +99,7 @@ const ExpenseDetail = () => {
                                 />
                             </label>
                         </div>
-                        <label htmlFor='description' className='card--body-item'>
+                        <label htmlFor='description' className={cx('card--body-item')}>
                             Descripción:
                             <InputComponent
                                 type={'text'}
@@ -122,7 +111,7 @@ const ExpenseDetail = () => {
                                 disabled={disabled}
                             />
                         </label>
-                        <label htmlFor='date' className='card--body-item'>
+                        <label htmlFor='date' className={cx('card--body-item')}>
                             Fecha:
                             <InputComponent
                                 type={'text'}
@@ -134,7 +123,7 @@ const ExpenseDetail = () => {
                                 disabled={disabled}
                             />
                         </label>
-                        <label htmlFor='person' className='card--body-item'>
+                        <label htmlFor='person' className={cx('card--body-item')}>
                             Pagado por:
                             <select
                                 name='person'
@@ -148,7 +137,7 @@ const ExpenseDetail = () => {
                             </select>
                         </label>
                     </div>
-                    <div className='card--buttons'>
+                    <div className={cx('card--buttons')}>
                         <button disabled={disabled}>Guardar Gasto</button>
                     </div>
                 </form>

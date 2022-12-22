@@ -2,8 +2,11 @@
 
 import React from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import './subheader.css';
+import { bind } from '../../../core/bind';
 
+import styles from './subheader.module.css';
+
+const cx = bind(styles);
 interface SubheaderModel {
     title: string;
     clickedIcon: () => void;
@@ -11,11 +14,11 @@ interface SubheaderModel {
 
 const Subheader = ({ title, clickedIcon }: SubheaderModel) => {
     return (
-        <div className='subheader'>
-            <div className='subheader-icon' onClick={() => clickedIcon()}>
+        <div className={cx('subheader')}>
+            <div className={cx('subheader-icon')} onClick={() => clickedIcon()}>
                 <AiOutlineArrowLeft style={{ fontSize: '20px' }} />
             </div>
-            <p className='subheader-title'>{title}</p>
+            <p className={cx('subheader-title')}>{title}</p>
         </div>
     );
 };

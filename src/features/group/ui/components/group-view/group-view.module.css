@@ -14,11 +14,12 @@
     border-radius: 1vw;
     margin: 24px;
     max-width: 1200px;
-    
+
 }
 
-@media(min-width: 1200px){
-    .main{
-      margin: auto;
+@media (min-width: 1200px) {
+    .main {
+        margin: auto;
+        margin-top: 10px;
     }
-  }
+}
